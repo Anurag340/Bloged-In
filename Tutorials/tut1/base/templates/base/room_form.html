@@ -1,0 +1,5 @@
+<form method="POST" action="{% if room %}{% url 'update-room' room.id %}{% else %}{% url 'create-room' %}{% endif %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+</form>
